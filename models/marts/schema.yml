@@ -1,0 +1,88 @@
+version: 2
+
+models:
+
+  - name: mart_budget_revenue
+    description: "Analysis-ready movie financial data for examining the relationship between budget and box office revenue."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+      - name: budget
+        tests:
+          - not_null
+
+      - name: revenue
+        tests:
+          - not_null
+
+
+  - name: mart_genre_ratings
+    description: "Analysis-ready movie-genre data for comparing audience ratings across genres."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+
+      - name: genre_name
+        tests:
+          - not_null
+
+      - name: vote_average
+        tests:
+          - not_null
+
+      - name: vote_count
+        tests:
+          - not_null
+
+
+  - name: mart_genre_trends
+    description: "Yearly genre counts and shares for analyzing changes in movie genre popularity over time."
+    columns:
+      - name: release_year
+        tests:
+          - not_null
+
+      - name: genre_name
+        tests:
+          - not_null
+
+      - name: genre_movie_count
+        tests:
+          - not_null
+
+      - name: total_movies
+        tests:
+          - not_null
+
+      - name: genre_share
+        tests:
+          - not_null
+
+
+  - name: mart_runtime_ratings
+    description: "Analysis-ready movie data for comparing audience ratings across runtime groups, limited to movies with at least 50 votes."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+      - name: runtime
+        tests:
+          - not_null
+
+      - name: runtime_group
+        tests:
+          - not_null
+
+      - name: vote_average
+        tests:
+          - not_null
+
+      - name: vote_count
+        tests:
+          - not_null

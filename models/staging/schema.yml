@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_movies_metadata
+    description: "Cleaned and standardized movie metadata."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_credits
+    description: "Staging model containing movie cast and crew data."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_keywords
+    description: "Staging model containing movie keyword data."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_links
+    description: "Mapping between MovieLens, IMDb and TMDB movie identifiers."
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_ratings
+    description: "MovieLens user ratings."
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
+      - name: movie_id
+        tests:
+          - not_null
+
+      - name: rating
+        tests:
+          - not_null
