@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: movies_raw
+    database: movies-data-project-510809
+    schema: movies_raw
+
+    tables:
+      - name: movies_metadata
+      - name: credits
+      - name: keywords
+      - name: links
+      - name: ratings
